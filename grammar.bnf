@@ -153,6 +153,7 @@ Keyword =
     | "buyback" SPACE ManaCost
     | "shadow"
     | "cycling" SPACE ManaCost
+    | "Basic landcycling" SPACE ManaCost
     | Land "cycling" SPACE ManaCost
     | "echo" SPACE ManaCost
     | "horsemanship"
