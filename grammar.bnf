@@ -172,7 +172,7 @@ Keyword =
     | "sunburst"
     | "bushido" SPACE Number
     | "soulshift" SPACE Number
-    | "splice"
+    | "splice onto arcane" SPACE ManaCost
     | "offering"
     | "ninjutsu" SPACE ManaCost
     | "epic"
@@ -187,7 +187,7 @@ Keyword =
     | "recover"
     | "ripple" SPACE Number
     | "split Second"
-    | "suspend" Number "—" ManaCost
+    | "suspend" SPACE Number "—" SPACE ManaCost
     | "vanishing" SPACE Number
     | "absorb"
     | "aura Swap"
@@ -196,13 +196,13 @@ Keyword =
     | "frenzy"
     | "gravestorm"
     | "poisonous"
-    | "transfigure"
+    | "transfigure" SPACE ManaCost
     | "champion" SPACE "a" "n"? SPACE SelectCreature
     | "changeling"
     | "evoke" SPACE ManaCost
     | "hideaway"
     | "prowl" SPACE ManaCost
-    | "reinforce" SPACE Number "—" ManaCost
+    | "reinforce" SPACE Number "—" SPACE ManaCost
     | "conspire"
     | "persist"
     | "wither"
@@ -223,7 +223,7 @@ Keyword =
     | "undying"
     | "miracle" SPACE ManaCost
     | "soulbond"
-    | "overload"
+    | "overload" SPACE ManaCost
     | "scavenge" SPACE ManaCost
     | "unleash"
     | "cipher"
