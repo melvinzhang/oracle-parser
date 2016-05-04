@@ -159,14 +159,14 @@ Keyword =
     | "kicker" SPACE ManaCost
     | "multikicker" SPACE ManaCost
     | "flashback" SPACE ManaCost
-    | "madness"
+    | "madness" SPACE ManaCost
     | "fear"
     | "morph" SPACE ManaCost
-    | "amplify"
+    | "amplify" SPACE Number
     | "provoke"
     | "storm"
     | "affinity for artifacts"
-    | "entwine"
+    | "entwine" SPACE ManaCost
     | "modular" SPACE Number
     | "sunburst"
     | "bushido" SPACE Number
@@ -176,15 +176,15 @@ Keyword =
     | "ninjutsu"
     | "epic"
     | "convoke"
-    | "dredge"
-    | "transmute"
+    | "dredge" SPACE Number
+    | "transmute" SPACE ManaCost
     | "bloodthirst" SPACE Number
     | "haunt"
     | "replicate" SPACE ManaCost
     | "forecast"
     | "graft" SPACE Number
     | "recover"
-    | "ripple"
+    | "ripple" SPACE Number
     | "split Second"
     | "suspend"
     | "vanishing" SPACE Number
@@ -200,7 +200,7 @@ Keyword =
     | "changeling"
     | "evoke" SPACE ManaCost
     | "hideaway"
-    | "prowl"
+    | "prowl" SPACE ManaCost
     | "reinforce" SPACE Number "—" ManaCost
     | "conspire"
     | "persist"
@@ -230,7 +230,7 @@ Keyword =
     | "extort"
     | "fuse"
     | "bestow" SPACE ManaCost
-    | "tribute"
+    | "tribute" SPACE Number
     | "dethrone"
     | "hidden agenda"
     | "outlast"
