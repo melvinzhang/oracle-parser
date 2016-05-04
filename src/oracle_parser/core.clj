@@ -17,4 +17,5 @@
 (defn -main
   "Parse lines from stdin based on grammar"
   [& args]
-  (parse-file (clojure.java.io/reader (first args))))
+  (with-open [r (clojure.java.io/reader (first args))]
+    (parse-file r)))
