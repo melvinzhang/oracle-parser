@@ -186,6 +186,7 @@ Keyword
     | "cascade"
     | "bestow" SPACE ManaCost
     | "flashback" SPACE ManaCost
+    | "morph" SPACE ManaCost
     ;
 
 ColorlessCost
