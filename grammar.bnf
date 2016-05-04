@@ -153,6 +153,7 @@ Keyword =
     | "buyback" SPACE ManaCost
     | "shadow"
     | "cycling" SPACE ManaCost
+    | Land "cycling" SPACE ManaCost
     | "echo" SPACE ManaCost
     | "horsemanship"
     | "fading" SPACE Number
@@ -173,7 +174,7 @@ Keyword =
     | "soulshift" SPACE Number
     | "splice"
     | "offering"
-    | "ninjutsu"
+    | "ninjutsu" SPACE ManaCost
     | "epic"
     | "convoke"
     | "dredge" SPACE Number
@@ -186,7 +187,7 @@ Keyword =
     | "recover"
     | "ripple" SPACE Number
     | "split Second"
-    | "suspend"
+    | "suspend" Number "—" ManaCost
     | "vanishing" SPACE Number
     | "absorb"
     | "aura Swap"
@@ -208,7 +209,7 @@ Keyword =
     | "retrace"
     | "devour" SPACE Number
     | "exalted"
-    | "unearth"
+    | "unearth" SPACE ManaCost
     | "cascade"
     | "annihilator" SPACE Number
     | "level up" SPACE ManaCost
@@ -223,7 +224,7 @@ Keyword =
     | "miracle" SPACE ManaCost
     | "soulbond"
     | "overload"
-    | "scavenge"
+    | "scavenge" SPACE ManaCost
     | "unleash"
     | "cipher"
     | "evolve"
