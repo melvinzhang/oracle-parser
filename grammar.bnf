@@ -321,6 +321,7 @@ EntersVerb
 BeginningEndStepTrigger
     = "at the beginning of the end step"
     | "at the beginning of each end step"
+    | "at the beginning of your end step"
     ;
 
 BeginningUpkeepTrigger
