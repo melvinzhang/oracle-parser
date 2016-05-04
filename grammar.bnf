@@ -7,6 +7,7 @@ Ability
     | KeywordAbility
     | ActivatedAbility
     | TriggeredAbility
+    | StaticAbility
     | AdditionalCost
     ;
 
@@ -75,6 +76,9 @@ Trigger
     | AttacksTrigger
     | BlockedTrigger
     ;
+
+StaticAbility
+    = SelectPermanent " has " '"'? Ability '"'?
 
 Action
     = DestroyNoRegenAction
