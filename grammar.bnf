@@ -187,6 +187,7 @@ Keyword
     | "bestow" SPACE ManaCost
     | "flashback" SPACE ManaCost
     | "morph" SPACE ManaCost
+    | "horsemanship"
     ;
 
 ColorlessCost
