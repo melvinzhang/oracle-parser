@@ -184,6 +184,8 @@ Keyword
     | "indestructible"
     | "cipher"
     | "cascade"
+    | "bestow" SPACE ManaCost
+    | "flashback" SPACE ManaCost
     ;
 
 ColorlessCost
