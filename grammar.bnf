@@ -40,11 +40,6 @@ AbilityWord
     | "morbid"
     ;
 
-KeywordAbility
-    = Keyword
-    | Enchant
-    ;
-
 ActivatedAbility
     = ActivationCosts EOC SpellEffect (SPACE AbilityRestriction EOS)?
     ;
@@ -118,11 +113,12 @@ Action
     | ScryAction
     ;
 
-Keyword =
-      "deathtouch"
+KeywordAbility
+    = "deathtouch"
     | "defender"
     | "strike"
-    | "enchant"
+    | "enchant" SPACE RestrictedPermanent
+    | "enchant player"
     | "equip" SPACE ManaCost
     | "first strike"
     | "double strike"
@@ -449,8 +445,8 @@ CreatureTokenSpec
     ;
 
 WithAbilitySpec
-    = "with " Keyword SEP Keyword
-    | "with " Keyword
+    = "with " KeywordAbility SEP KeywordAbility
+    | "with " KeywordAbility
     ;
 
 CreatureSpec
@@ -729,11 +725,6 @@ Count
     | "x"
     ;
 
-Enchant
-    = "enchant" SPACE RestrictedPermanent
-    | "enchant player"
-    ;
-
 Duration
     = "until end of turn"
     | "for as long as " SelectPlayer " control @"
@@ -747,7 +738,7 @@ Duration
     ;
 
 GainAction
-    = (SelectPermanent SPACE)? GainVerb SPACE Keyword (SEP Keyword)*
+    = (SelectPermanent SPACE)? GainVerb SPACE KeywordAbility (SEP KeywordAbility)*
     ;
 
 GainVerb
@@ -943,8 +934,8 @@ PermanentRestriction
 CreatureRestriction
     = "with power " Number " or less"
     | "with power " Number " or greater"
-    | "with " Keyword
-    | "without " Keyword
+    | "with " KeywordAbility
+    | "without " KeywordAbility
     | "with a "  (CounterType SPACE)? "counter on it"
     | "tapped or blocking"
     | "attacking or blocking"
