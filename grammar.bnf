@@ -847,19 +847,19 @@ RestrictedPermanent
     ;
 
 RestrictedArtifact
-    = (PermanentRestriction SPACE)*+ Artifact (SPACE PermanentRestriction)*
+    = (PermanentRestriction SPACE)* Artifact (SPACE PermanentRestriction)*
     ;
 
 RestrictedEnchantment
-    = (PermanentRestriction SPACE)? Enchantment (SPACE PermanentRestriction)?
+    = (PermanentRestriction SPACE)* Enchantment (SPACE PermanentRestriction)*
     ;
 
 RestrictedLand
-    = (LandRestriction SPACE)? Land (SPACE LandRestriction)?
+    = (LandRestriction SPACE)* Land (SPACE LandRestriction)*
     ;
 
 RestrictedTribal
-    = (PermanentRestriction SPACE)? Tribal (SPACE PermanentRestriction)?
+    = (PermanentRestriction SPACE)* Tribal (SPACE PermanentRestriction)*
     ;
 
 RestrictedSpell
