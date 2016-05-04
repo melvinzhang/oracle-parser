@@ -9,10 +9,12 @@
     (doseq [line lines]
       (let [parsed (parser line)]
         (if (insta/failure? parsed)
-          (println "fail :" line)
+          (binding  [*out* *err*]
+            (println "fail :" line)
+            (println "error:" parsed))
           (do
             (println "parse:" line)
-            (println "tree :" (parser line))))))))
+            (println "tree :" parsed)))))))
 
 (defn -main
   "Parse lines from stdin based on grammar"
