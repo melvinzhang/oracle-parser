@@ -21,3 +21,6 @@ CounterType:
 
 rules.txt:
 	lein run AllCards.json > $@
+
+AllCards.json:
+	wget http://mtgjson.com/json/AllCards.json.zip && unzip AllCards.json.zip && rm AllCards.json.zip
