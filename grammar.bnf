@@ -757,7 +757,7 @@ AddManaAction
     ;
 
 ManaSource
-    = "{1}"
+    = "{C}"
     | SingleColor (SEP SingleColor)*
     | "one mana of any color"
     ;
