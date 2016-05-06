@@ -27,6 +27,7 @@
       (let [text (get data "text" "")
             parts (-> text
              (string/replace name "@")
+             (string/replace (first (string/split name #",")) "@")
              (string/replace #" \([^\)]*\)" "")
              (string/replace "—\n" "— ")
              (string/replace "\n•" " •")
