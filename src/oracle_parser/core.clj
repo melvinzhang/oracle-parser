@@ -29,6 +29,8 @@
              (string/replace name "@")
              (string/replace (first (string/split name #",")) "@")
              (string/replace #" \([^\)]*\)" "")
+             (string/replace #"\([^\)]*\)\n" "")
+             (string/replace #"\([^\)]*\)" "")
              (string/replace "—\n" "— ")
              (string/replace "\n•" " •")
              (string/split #"\n"))]
