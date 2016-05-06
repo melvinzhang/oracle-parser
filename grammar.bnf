@@ -242,11 +242,13 @@ KeywordAbility
     | "dash"
     | "exploit"
     | "menace"
-    | "renown"
+    | "renown" SPACE Number
     | "awaken"
     | "devoid"
     | "ingest"
     | "myriad"
+    | "surge" SPACE ManaCost
+    | "skulk"
     ;
 
 ColorlessCost
