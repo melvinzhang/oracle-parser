@@ -251,10 +251,12 @@ KeywordAbility
     | "skulk"
     ;
 
-ColorlessCost
+AnyManaCost
     = "{" Number "}"
     | "{x}"
     ;
+
+ColorlessCost = "{c}"
 
 SingleColor
     = "{b}"
@@ -277,9 +279,7 @@ HybridSingleCost
     ;
 
 ManaCost
-    = ColorlessCost+ HybridSingleCost* SingleColor*
-    | HybridSingleCost+ SingleColor*
-    | SingleColor+
+    = AnyManaCost* ColorlessCost* HybridSingleCost* SingleColor*
     ;
 
 BecomesTargetTrigger
