@@ -19,5 +19,5 @@ CounterType:
 	# remove a, each, that
 	# add poison
 
-text:
-	jq "values[].text" AllCards.json
+rules.txt:
+	lein run AllCards.json > $@
