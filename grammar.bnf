@@ -113,7 +113,7 @@ Action
     | ScryAction
     ;
 
-KeywordAbilities = KeywordAbility (", " KeywordAbility)*
+KeywordAbilities = KeywordAbility (SEP KeywordAbility)*
 
 KeywordAbility
     = "deathtouch"
@@ -1274,6 +1274,7 @@ SEP
     | ", and "
     | ", then "
     | ", "
+    | "; "
     | " or "
     | " and "
     ;
