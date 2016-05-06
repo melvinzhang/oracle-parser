@@ -4,7 +4,7 @@ Rule
 
 Ability
     = SpellEffect
-    | KeywordAbility
+    | KeywordAbilities
     | ActivatedAbility
     | TriggeredAbility
     | StaticAbility
@@ -112,6 +112,8 @@ Action
     | KickerAction
     | ScryAction
     ;
+
+KeywordAbilities = KeywordAbility (", " KeywordAbility)*
 
 KeywordAbility
     = "deathtouch"
