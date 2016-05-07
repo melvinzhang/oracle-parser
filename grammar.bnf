@@ -286,8 +286,24 @@ HybridSingleCost
     | "{w/u}"
     ;
 
+HybridMonoCost
+    = "{2/w}"
+    | "{2/u}"
+    | "{2/b}"
+    | "{2/r}"
+    | "{2/g}"
+
+PhyrexianManaCost
+    = "{w/p}"
+    | "{u/p}"
+    | "{b/p}"
+    | "{r/p}"
+    | "{g/p}"
+
+SnowManaCost = "{s}"
+
 ManaCost
-    = AnyManaCost* ColorlessCost* HybridSingleCost* SingleColor*
+    = (AnyManaCost | ColorlessCost | HybridSingleCost | HybridMonoCost | PhyrexianManaCost | SingleColor | SnowManaCost)+
     ;
 
 BecomesTargetTrigger
