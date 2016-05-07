@@ -76,8 +76,8 @@ Trigger
 
 StaticAbility
     = SelectPermanent " has " '"' Ability '"'
-    | RestrictedSpell " you cast cost " ManaCost " less to cast" EOS
-    | RestrictedSpell " you cast cost " ManaCost " more to cast" EOS
+    | RestrictedSpell " cost " ManaCost " less to cast" EOS
+    | RestrictedSpell " cost " ManaCost " more to cast" EOS
 
 Action
     = DestroyNoRegenAction
@@ -891,6 +891,8 @@ SpellRestriction
     | "with converted mana cost " Number
     | SpellType (SEP SpellType)*
     | RestrictedPermanent (SEP RestrictedPermanent)* 
+    | "you cast"
+    | "your opponents cast"
     ;
 
 RestrictedCard
