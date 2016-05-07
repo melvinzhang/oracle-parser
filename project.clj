@@ -6,7 +6,7 @@
   :dependencies [
     [instaparse "1.4.2"]
     [cheshire  "5.6.1"]
-    [org.clojure/clojure "1.5.1"]]
+    [org.clojure/clojure "1.8.0"]]
   :main ^:skip-aot oracle-parser.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
