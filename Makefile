@@ -1,8 +1,11 @@
 test:
 	lein run parsable.txt
 
-test_all:
-	lein run rules.txt
+target/uberjar/oracle-parser-0.1.0-SNAPSHOT-standalone.jar: src/oracle_parser/core.clj
+	lein uberjar
+
+test_all: target/uberjar/oracle-parser-0.1.0-SNAPSHOT-standalone.jar
+	java -jar $^ rules.txt
 
 parsable.txt: grammar.bnf
 	make test_all > test_all.out 2> test_all.err
