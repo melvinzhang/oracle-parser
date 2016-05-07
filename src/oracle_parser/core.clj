@@ -49,6 +49,11 @@
   "Parse lines from stdin based on grammar"
   [& args]
   (let [arg (first args)]
-    (if (.endsWith arg "json")
-      (print-rules arg)
-      (parse-file arg))))
+    (cond
+      (= arg nil)
+        (doseq [line (line-seq (java.io.BufferedReader. *in*))] (println (parser line)))
+      (.endsWith arg "json")
+        (print-rules arg)
+      :else
+        (parse-file arg)
+      )))
