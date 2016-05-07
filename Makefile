@@ -6,8 +6,8 @@ test_all:
 
 parsable.txt: grammar.bnf
 	make test_all > test_all.out 2> test_all.err
-	cat test_all.out | grep "parse:" | sed 's/parse: //' | sort | uniq > $@
-	cat test_all.err | grep "fail :" | sort | uniq -c | sort -n > failed.txt
+	cat test_all.out | grep "parse:" | sed 's/parse: //' | sort > $@
+	cat test_all.err | grep "fail :" | sed 's/fail : //' | sort > failed.txt
 
 parsable.new: grammar.bnf
 	mv parsable.txt parsable.old
