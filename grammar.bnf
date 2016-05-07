@@ -283,6 +283,7 @@ HybridSingleCost
     | "{b/g}"
     | "{b/r}"
     | "{w/b}"
+    | "{w/u}"
     ;
 
 ManaCost
