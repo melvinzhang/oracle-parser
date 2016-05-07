@@ -20,7 +20,7 @@ CounterType:
 	# add poison
 
 rules.txt:
-	lein run AllCards.json > $@
+	lein run AllCards.json | sort | uniq > $@
 
 AllCards.json:
 	wget http://mtgjson.com/json/AllCards.json.zip && unzip AllCards.json.zip && rm AllCards.json.zip
