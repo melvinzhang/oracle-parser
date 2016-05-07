@@ -199,11 +199,11 @@ KeywordAbility
     | "split Second"
     | "suspend" SPACE Number "—" ManaCost
     | "vanishing" SPACE Number
-    | "absorb"
+    | "absorb" SPACE Number
     | "aura Swap"
     | "delve"
     | "fortify"
-    | "frenzy"
+    | "frenzy" SPACE Number
     | "gravestorm"
     | "poisonous" SPACE Number
     | "transfigure" KeywordCost
