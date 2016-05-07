@@ -75,7 +75,8 @@ Trigger
     ;
 
 StaticAbility
-    = SelectPermanent " has " '"' Ability '"'
+    = SelectPermanent SPACE GainVerb SPACE '"' Ability '"'
+    | SelectPermanent SPACE GainVerb SPACE Ability EOS
     | RestrictedSpell " cost " ManaCost " less to cast" EOS
     | RestrictedSpell " cost " ManaCost " more to cast" EOS
 
