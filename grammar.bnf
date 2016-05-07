@@ -119,13 +119,15 @@ Action
 
 KeywordAbilities = KeywordAbility (SEP KeywordAbility)*
 
+KeywordCost = SPACE ManaCost | "—" ActivationCosts EOS
+
 KeywordAbility
     = "deathtouch"
     | "defender"
     | "strike"
     | "enchant" SPACE RestrictedPermanent
     | "enchant player"
-    | "equip" SPACE ManaCost
+    | "equip" KeywordCost
     | "first strike"
     | "double strike"
     | "flash"
@@ -153,48 +155,49 @@ KeywordAbility
     | "vigilance"
     | "banding"
     | "rampage" SPACE Number
-    | "cumulative upkeep" SPACE ManaCost
+    | "cumulative upkeep" KeywordCost
     | "flanking"
     | "phasing"
-    | "buyback" SPACE ManaCost
+    | "buyback" KeywordCost
     | "shadow"
-    | "cycling" SPACE ManaCost
-    | "Basic landcycling" SPACE ManaCost
-    | Land "cycling" SPACE ManaCost
-    | "echo" SPACE ManaCost
+    | "cycling" KeywordCost
+    | "Basic landcycling" KeywordCost
+    | Land "cycling" KeywordCost
+    | "echo" KeywordCost
     | "horsemanship"
     | "fading" SPACE Number
-    | "kicker" SPACE ManaCost
-    | "multikicker" SPACE ManaCost
-    | "flashback" SPACE ManaCost
-    | "madness" SPACE ManaCost
+    | "kicker" KeywordCost
+    | "multikicker" KeywordCost
+    | "flashback" KeywordCost
+    | "madness" KeywordCost
     | "fear"
-    | "morph" SPACE ManaCost
+    | "morph" KeywordCost
+    | "megamorph" KeywordCost
     | "amplify" SPACE Number
     | "provoke"
     | "storm"
     | "affinity for artifacts"
-    | "entwine" SPACE ManaCost
+    | "entwine" KeywordCost
     | "modular" SPACE Number
     | "sunburst"
     | "bushido" SPACE Number
     | "soulshift" SPACE Number
-    | "splice onto arcane" SPACE ManaCost
+    | "splice onto arcane" KeywordCost
     | "offering"
-    | "ninjutsu" SPACE ManaCost
+    | "ninjutsu" KeywordCost
     | "epic"
     | "convoke"
     | "dredge" SPACE Number
-    | "transmute" SPACE ManaCost
+    | "transmute" KeywordCost
     | "bloodthirst" SPACE Number
     | "haunt"
-    | "replicate" SPACE ManaCost
+    | "replicate" KeywordCost
     | "forecast"
     | "graft" SPACE Number
-    | "recover"
+    | "recover" KeywordCost
     | "ripple" SPACE Number
     | "split Second"
-    | "suspend" SPACE Number "—" SPACE ManaCost
+    | "suspend" SPACE Number "—" ManaCost
     | "vanishing" SPACE Number
     | "absorb"
     | "aura Swap"
@@ -203,23 +206,23 @@ KeywordAbility
     | "frenzy"
     | "gravestorm"
     | "poisonous" SPACE Number
-    | "transfigure" SPACE ManaCost
+    | "transfigure" KeywordCost
     | "champion" SPACE "a" "n"? SPACE SelectCreature
     | "changeling"
-    | "evoke" SPACE ManaCost
+    | "evoke" KeywordCost
     | "hideaway"
-    | "prowl" SPACE ManaCost
-    | "reinforce" SPACE Number "—" SPACE ManaCost
+    | "prowl" KeywordCost
+    | "reinforce" SPACE Number "—" ManaCost
     | "conspire"
     | "persist"
     | "wither"
     | "retrace"
     | "devour" SPACE Number
     | "exalted"
-    | "unearth" SPACE ManaCost
+    | "unearth" KeywordCost
     | "cascade"
     | "annihilator" SPACE Number
-    | "level up" SPACE ManaCost
+    | "level up" KeywordCost
     | "level" SPACE Number "-" Number
     | "level" SPACE Number "+"
     | "rebound"
@@ -228,22 +231,22 @@ KeywordAbility
     | "battle Cry"
     | "living Weapon"
     | "undying"
-    | "miracle" SPACE ManaCost
+    | "miracle" KeywordCost
     | "soulbond"
-    | "overload" SPACE ManaCost
-    | "scavenge" SPACE ManaCost
+    | "overload" KeywordCost
+    | "scavenge" KeywordCost
     | "unleash"
     | "cipher"
     | "evolve"
     | "extort"
     | "fuse"
-    | "bestow" SPACE ManaCost
+    | "bestow" KeywordCost
     | "tribute" SPACE Number
     | "dethrone"
     | "hidden agenda"
     | "outlast"
     | "prowess"
-    | "dash"
+    | "dash" KeywordCost
     | "exploit"
     | "menace"
     | "renown" SPACE Number
@@ -251,7 +254,7 @@ KeywordAbility
     | "devoid"
     | "ingest"
     | "myriad"
-    | "surge" SPACE ManaCost
+    | "surge" KeywordCost
     | "skulk"
     ;
 
