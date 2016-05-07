@@ -75,7 +75,9 @@ Trigger
     ;
 
 StaticAbility
-    = SelectPermanent " has " '"'? Ability '"'?
+    = SelectPermanent " has " '"' Ability '"'
+    | RestrictedSpell " you cast cost " ManaCost " less to cast" EOS
+    | RestrictedSpell " you cast cost " ManaCost " more to cast" EOS
 
 Action
     = DestroyNoRegenAction
