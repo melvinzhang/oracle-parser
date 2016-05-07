@@ -202,7 +202,7 @@ KeywordAbility
     | "fortify"
     | "frenzy"
     | "gravestorm"
-    | "poisonous"
+    | "poisonous" SPACE Number
     | "transfigure" SPACE ManaCost
     | "champion" SPACE "a" "n"? SPACE SelectCreature
     | "changeling"
