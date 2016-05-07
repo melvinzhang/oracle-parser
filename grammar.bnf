@@ -13,6 +13,8 @@ Ability
 
 SpellEffect
     = Effect EOS (SPACE Effect EOS)*
+    | "Choose one —" (" • " Effect EOS)+
+    | "Choose two —" (" • " Effect EOS)+
     ;
 
 Effect
