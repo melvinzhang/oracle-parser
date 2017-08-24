@@ -1,16 +1,15 @@
-test:
-	lein run parsable.txt
+AllCards.json:
+	wget http://mtgjson.com/json/AllCards.json.zip && unzip AllCards.json.zip && rm AllCards.json.zip
 
-target/uberjar/oracle-parser-0.1.0-SNAPSHOT-standalone.jar: src/oracle_parser/core.clj
-	lein uberjar
+rules.txt: target/uberjar/oracle-parser-0.1.0-SNAPSHOT-standalone.jar AllCards.json
+	java -jar $^ | sort | uniq > $@
 
-test_all: target/uberjar/oracle-parser-0.1.0-SNAPSHOT-standalone.jar
-	java -jar $^ rules.txt
+rules.out: target/uberjar/oracle-parser-0.1.0-SNAPSHOT-standalone.jar rules.txt
+	java -jar $^ > rules.out 2> rules.err
 
-parsable.txt: grammar.bnf
-	make test_all > test_all.out 2> test_all.err
-	cat test_all.out | grep "parse:" | sed 's/parse: //' | sort > $@
-	cat test_all.err | grep "fail :" | sed 's/fail : //' | sort > failed.txt
+parsable.txt: grammar.bnf rules.out
+	cat rules.out | grep "parse:" | sed 's/parse: //' | sort > $@
+	cat rules.err | grep "fail :" | sed 's/fail : //' | sort > failed.txt
 
 parsable.new: grammar.bnf
 	mv parsable.txt parsable.old
@@ -22,8 +21,8 @@ CounterType:
 	# remove a, each, that
 	# add poison
 
-rules.txt:
-	lein run AllCards.json | sort | uniq > $@
+test:
+	lein run parsable.txt
 
-AllCards.json:
-	wget http://mtgjson.com/json/AllCards.json.zip && unzip AllCards.json.zip && rm AllCards.json.zip
+target/uberjar/oracle-parser-0.1.0-SNAPSHOT-standalone.jar: src/oracle_parser/core.clj
+	lein uberjar
